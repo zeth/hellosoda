@@ -1,0 +1,66 @@
+<h1>{{$ctrl.person.personal.first_name}} {{$ctrl.person.personal.last_name}}</h1>
+
+<img ng-src="{{$ctrl.person.personal.avatar}}" class="avatar"
+     ng-class="selected" width="200" />
+
+<ul class="specs">
+  <li>
+    <span>Personal</span>
+    <dl>
+      <dt>Age</dt>
+      <dd>{{$ctrl.person.personal.age}}</dd>
+      <dt>Job Title</dt>
+      <dd>{{$ctrl.person.personal.job_title}}</dd>
+      <dt>Company</dt>
+      <dd>{{$ctrl.person.personal.job_company}}</dd>
+      <dt>City</dt>
+      <dd>{{$ctrl.person.personal.city}}</dd>
+      <dt>Country</dt>
+      <dd>{{$ctrl.person.personal.country}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Devices</span>
+    <dl ng-repeat="device in $ctrl.person.devices">
+      <dt>{{device.vendor}}: {{device.name}}</dt>
+      <dd>Count: {{device.count}}</dd>
+    </dl>
+  </li>
+  <li>
+    
+    <span>Social</span>
+    <dl>
+      <img ng-src="icons/twitter.png" width="20" />
+      <a href="{{$ctrl.person.social[0].url}}"
+         title="Following: {{$ctrl.person.social[0].following}}
+Followers: {{$ctrl.person.social[0].followers}}
+Years: {{$ctrl.person.social[0].account_age}}"
+         >{{$ctrl.person.social[0].username}}</a>
+    </dl>
+    <dl>
+      <img ng-src="icons/facebook.png" width="20" />
+      <a href="{{$ctrl.person.social[1].url}}"
+         title="Friends: {{$ctrl.person.social[1].friends}}
+Years: {{$ctrl.person.social[1].account_age}}"
+      >{{$ctrl.person.personal.first_name}}</a>
+    </dl>
+  </li>
+  <li>
+    <span>Interests</span>
+    <dl ng-repeat="interest in $ctrl.person.interests">
+      <dt>{{interest.name}}</dt>
+      <dd>{{interest.count}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Scores</span>
+    <dt>Footprint Size</dt>
+    <dd>{{$ctrl.person.scores.footprint_size}}</dd>
+    <dt>ID</dt>
+    <dd>{{$ctrl.person.scores.id}}</dd>
+    <dt>Commenter</dt>
+    <dd>{{$ctrl.person.scores.commenter}}</dd>
+    <dt>Sharer</dt>
+    <dd>{{$ctrl.person.scores.sharer}}</dd>
+  </li>  
+</ul>
